@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Character = (props) => {
+const CharacterCard = (props) => {
   const { img, name, specie } = props;
   return (
     <div>
@@ -13,4 +13,4 @@ const Character = (props) => {
   )
 }
 
-export default Character;
+export default CharacterCard;

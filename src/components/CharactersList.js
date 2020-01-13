@@ -1,11 +1,11 @@
 import React from 'react'
-import CharacterItem from "./CharacterItem";
+import CharacterCard from "./CharacterCard";
 
 function CharactersList(props) {
   return <ul>
     {props.characters.map((character, key) =>
       <li key={character.id}>
-        <CharacterItem
+        <CharacterCard
           img={character.image}
           name={character.name}
           specie={character.species} />
