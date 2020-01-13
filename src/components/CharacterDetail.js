@@ -1,11 +1,11 @@
 import React from 'react'
 
-const CharacterDetail = () => {
+const CharacterDetail = (props) => {
+  const { img, name, specie } = props.character;
+  console.log(props);
   return (
     <div>
-      <p>
-        Detalle de personaje
-      </p>
+      <p>{name}</p>
     </div>
   )
 }

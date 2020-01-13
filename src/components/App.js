@@ -16,6 +16,7 @@ class App extends React.Component {
       characters: []
     }
     this.handleSearch = this.handleSearch.bind(this);
+    this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
   }
 
   //events
@@ -45,10 +46,22 @@ class App extends React.Component {
 
   // render(
 
-  renderCharacterDetail() {
-    return (
-      < CharacterDetail characters={this.state.characters} />
-    );
+  renderCharacterDetail(props) {
+
+    const routeId = props.match.params.id;
+
+    const selectedCharacter = this.state.characters.find(character => character.id === routeId);
+    if (selectedCharacter === undefined) {
+      return <p>
+        Personaje no encontrado
+        </p>
+    } else {
+
+      return (
+
+        < CharacterDetail character={selectedCharacter} />
+      );
+    }
   }
 
   render() {
@@ -60,9 +73,12 @@ class App extends React.Component {
           handleSearch={this.handleSearch} />
         <Switch>
           <Route exact path='/'>
-            < CharactersList characters={this.filterSearch()} />
+            < CharactersList
+              characters={this.filterSearch()} />
           </Route>
-          <Route path='/character/:id' render={this.renderCharacterDetail} />
+          <Route
+            path='/character/:id'
+            render={this.renderCharacterDetail} />
         </Switch>
       </div>
     );
