@@ -11,7 +11,6 @@ const CharacterCard = (props) => {
           src={img}
           alt={`Imagen del personaje ${name}`} />
         <h2>{name}</h2>
-        <p>{`Especie: ${specie}`}</p>
         <p>{specie === "Human" ? "Especie 👤" : "Especie: 👽"}</p>
 
       </div>
