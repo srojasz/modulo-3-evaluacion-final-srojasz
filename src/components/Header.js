@@ -7,9 +7,9 @@ export default () => {
   const logo = "https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png";
 
   return (
-    <header>
+    <header className="d-flex justify-content-center">
 
-      <img src={logo} alt="Cabecera de la serie Rick and Morty" />
+      <img className="img-fluid" src={logo} alt="Cabecera de la serie Rick and Morty" />
 
 
 
