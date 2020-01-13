@@ -1,15 +1,20 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const CharacterCard = (props) => {
-  const { img, name, specie } = props;
+  const { id, img, name, specie } = props;
+  const route = `/character/${id}`
   return (
-    <div>
-      <img
-        src={img}
-        alt={`Imagen del personaje ${name}`} />
-      <h2>{name}</h2>
-      <p>{`Especie: ${specie}`}</p>
-    </div>
+    <Link to={route}>
+      <div>
+        <img
+          src={img}
+          alt={`Imagen del personaje ${name}`} />
+        <h2>{name}</h2>
+        <p>{`Especie: ${specie}`}</p>
+
+      </div>
+    </Link>
   )
 }
 

@@ -48,9 +48,9 @@ class App extends React.Component {
 
   renderCharacterDetail(props) {
 
-    const routeId = props.match.params.id;
+    const routeId = parseInt(props.match.params.id);
 
-    const selectedCharacter = this.state.characters.find(character => character.id === routeId);
+    const selectedCharacter = this.state.characters.find(character => character.id === routeId)
     if (selectedCharacter === undefined) {
       return <p>
         Personaje no encontrado

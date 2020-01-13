@@ -16,10 +16,14 @@ function CharactersList(props) {
           <CharacterCard
             img={character.image}
             name={character.name}
-            specie={character.species} />
+            specie={character.species}
+            id={character.id}
+          />
+
         </li>
-      )}
-    </ul>
+      )
+      }
+    </ul >
   }
 }
 export default CharactersList;
