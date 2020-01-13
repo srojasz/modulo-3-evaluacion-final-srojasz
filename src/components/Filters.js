@@ -11,13 +11,13 @@ const Filters = (props) => {
   }
 
   return (
-    <form className="form-group">
+    <form className="form-inline mb-5 d-flex justify-content-center">
       <label
         className="" htmlFor="search">
         ¿Qué personaje estás buscando?
       </label>
       <input
-        className="form-control ml-2 text-center"
+        className="form-control ml-2 text-left"
         type="text"
         placeholder="Ej.Summer Smith"
         onChange={handleSearch}

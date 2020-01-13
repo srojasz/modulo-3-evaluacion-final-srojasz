@@ -1,22 +1,30 @@
 import React from 'react'
 import CharacterCard from "./CharacterCard";
 import PropTypes from 'prop-types';
+import noresults from "../images/noresults.jpg";
 
 function CharactersList(props) {
 
   if (props.characters.length === 0) {
     return (
-      <p>Lo siento, no hemos encontrado resultados</p>
+      <section className="d-flex flex-column justify-content-center align-items-center">
+      <h4 className="text-center mb-1">¡Oh, no! No hemos encontrado resultados
+      </h4>
+      <h5 className="mb-5">¿Por qué no lo intentas otra vez?</h5>
+      <img className="img-fluid w-75 mb-5"
+      src={noresults} alt="Imagen de los protagonistas de Rick and Morty asustados" />
+      
+      </section>
     )
 
   } else {
 
-    return <ul className="d-flex justify-content-center row cols-3 ">
+    return <ul className="col-center row justify-content-center">
       {props.characters.map((character) =>
         <li
-          className="card 
-          bg-info m-2
-          col-4 col-sm-3 col-lg-2  border-secondary pb-3
+          className="card  
+          bg-info m-2 col-6 col-sm-3 col-md-3 col-lg-2
+            border-secondary pb-3
           text-center"
           key={character.id}>
           <CharacterCard

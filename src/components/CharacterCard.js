@@ -7,19 +7,32 @@ const CharacterCard = (props) => {
 
   const { id, img, name, specie } = props;
   const route = `/character/${id}`
+
+
   return (
-    <div>
+    <React.Fragment>
       <img
         className="img-fluid mt-3 mb-3"
         src={img}
         alt={`Imagen del personaje ${name}`} />
-      <h5 className="card-title" >{name}</h5>
-      <p>{specie === "Human" ? "Especie 👤" : "Especie: 👽"}</p>
+      <h5 className="card-title text-white font-weight-bold" >{name}</h5>
+      <p className="text-white">
+        {specie === "Human"
+          ? <p>Humano <i className="fas fa-user"></i></p>
+          : <p>Alien 👽 </p>
+        }
+      </p>
+
+
 
       <Link to={route}>
-        <button>Más info</button>
+        <button
+          className="btn btn-light btn-outline-secondary"
+          title="Pincha para conocer más información">
+          Más info
+          </button>
       </Link>
-    </div>
+    </React.Fragment>
 
   )
 }
