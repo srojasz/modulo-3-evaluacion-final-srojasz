@@ -1,6 +1,7 @@
 import React from 'react';
 import fetchCharacters from '../api/fetchCharacters';
 import CharactersList from './CharactersList';
+import Header from './Header';
 
 
 class App extends React.Component {
@@ -18,9 +19,10 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.characters)
+
     return (
       <div>
+        < Header />
         < CharactersList characters={this.state.characters} />
       </div>
     );

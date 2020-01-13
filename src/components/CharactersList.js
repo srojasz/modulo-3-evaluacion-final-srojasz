@@ -2,8 +2,6 @@ import React from 'react'
 import CharacterItem from "./CharacterItem";
 
 function CharactersList(props) {
-
-  console.log(props);
   return <ul>
     {props.characters.map((character, key) =>
       <li key={character.id}>
@@ -11,10 +9,9 @@ function CharactersList(props) {
           img={character.image}
           name={character.name}
           specie={character.species} />
-
-      </li>)}
+      </li>
+    )}
   </ul>
 }
-
 
 export default CharactersList;

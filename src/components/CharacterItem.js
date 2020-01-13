@@ -6,9 +6,9 @@ const Character = (props) => {
     <div>
       <img
         src={img}
-        alt={name} />
+        alt={`Imagen del personaje ${name}`} />
       <h2>{name}</h2>
-      <p>{specie}</p>
+      <p>{`Especie: ${specie}`}</p>
     </div>
   )
 }
