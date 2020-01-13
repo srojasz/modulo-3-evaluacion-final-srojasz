@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+
 const CharacterDetail = (props) => {
+
   const { image, name, species, episode, location, status } = props.character;
 
   return (
@@ -12,8 +14,8 @@ const CharacterDetail = (props) => {
         <button>Volver al listado</button>
       </Link>
       <h2>{name}</h2>
-      <p>{`Estado: ${status}`}</p>
-      <p>{`Especie: ${species}`}</p>
+      <p>{status === "Alive" ? "Estado 💓 " : "Estado 💔"}</p>
+      <p>{species === "Human" ? "Especie 👤" : "Especie: 👽"}</p>
       <p>{`Planeta: ${location.name}`}</p>
       <p>{`Capítulos: ${episode.length}`}</p>
 

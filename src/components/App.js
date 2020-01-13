@@ -15,6 +15,7 @@ class App extends React.Component {
       search: "",
       characters: []
     }
+
     this.handleSearch = this.handleSearch.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
   }
@@ -26,6 +27,10 @@ class App extends React.Component {
       search: inputValue
     })
   }
+
+
+
+
 
   // helpers
 
@@ -65,12 +70,14 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.search)
+
     return (
       <div>
-        < Header />
+        < Header
+        />
         < Filters
-          handleSearch={this.handleSearch} />
+          handleSearch={this.handleSearch}
+        />
         <Switch>
           <Route exact path='/'>
             < CharactersList
