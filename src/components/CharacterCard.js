@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+
 
 const CharacterCard = (props) => {
+  console.log(props);
   const { id, img, name, specie } = props;
   const route = `/character/${id}`
   return (
@@ -16,6 +19,14 @@ const CharacterCard = (props) => {
       </div>
     </Link>
   )
+}
+CharacterCard.propTypes = {
+  img: PropTypes.string,
+  name: PropTypes.string,
+  specie: PropTypes.string
+
+
+
 }
 
 export default CharacterCard;
