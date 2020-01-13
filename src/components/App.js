@@ -1,8 +1,10 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import fetchCharacters from '../api/fetchCharacters';
 import Header from './Header';
 import Filters from './Filters';
 import CharactersList from './CharactersList';
+import CharacterDetail from './CharacterDetail';
 
 
 class App extends React.Component {
@@ -32,13 +34,21 @@ class App extends React.Component {
     if (!inputText) {
       return characters
     } else {
-      return characters.filter(character => character.name.includes(inputText))
+      return characters.filter(character => character.name.toLowerCase().includes(inputText.toLowerCase()))
     }
   }
 
   // fetch
   componentDidMount() {
     fetchCharacters().then(characters => this.setState({ characters }));
+  }
+
+  // render(
+
+  renderCharacterDetail() {
+    return (
+      < CharacterDetail characters={this.state.characters} />
+    );
   }
 
   render() {
@@ -48,7 +58,12 @@ class App extends React.Component {
         < Header />
         < Filters
           handleSearch={this.handleSearch} />
-        < CharactersList characters={this.filterSearch()} />
+        <Switch>
+          <Route exact path='/'>
+            < CharactersList characters={this.filterSearch()} />
+          </Route>
+          <Route path='/character/:id' render={this.renderCharacterDetail} />
+        </Switch>
       </div>
     );
   }

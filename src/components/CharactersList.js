@@ -11,7 +11,7 @@ function CharactersList(props) {
   } else {
 
     return <ul>
-      {props.characters.map((character, key) =>
+      {props.characters.map((character) =>
         <li key={character.id}>
           <CharacterCard
             img={character.image}
