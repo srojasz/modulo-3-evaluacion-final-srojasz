@@ -31,46 +31,47 @@ const Filters = (props) => {
         value={props.search}
         onChange={handleSearch}
       />
-
-      <label
-        className="mb-2"
-        name="species"
-        htmlFor="human">
-        Humano
+      <div className="d-flex mt-2">
+        <label
+          className="mb-2"
+          name="species"
+          htmlFor="human">
+          Humano
       </label>
-      <input
-        className="form-control ml-2 mt-3 mr-3 text-left"
-        name="species"
-        type="radio"
-        value="Human"
-        onChange={handleSpecies}
-      />
-      <label
-        className="mb-2"
-        name="species"
-        htmlFor="alien">
-        Alien
+        <input
+          className="form-control ml-2 mt-3 mr-3 text-left"
+          name="species"
+          type="radio"
+          value="Human"
+          onChange={handleSpecies}
+        />
+        <label
+          className="mb-2"
+          name="species"
+          htmlFor="alien">
+          Alien
       </label>
-      <input
-        className="form-control ml-2 mr-2 mt-3 text-left"
-        type="radio"
-        name="species"
-        value="Alien"
-        onChange={handleSpecies}
-      />
-      <label
-        className="mb-2"
-        name="species"
-        htmlFor="all">
-        Todos
+        <input
+          className="form-control ml-2 mr-2 mt-3 text-left"
+          type="radio"
+          name="species"
+          value="Alien"
+          onChange={handleSpecies}
+        />
+        <label
+          className="mb-2"
+          name="species"
+          htmlFor="all">
+          Todos
       </label>
-      <input
-        className="form-control ml-2 mt-3 text-left"
-        type="radio"
-        name="species"
-        value="All"
-        onChange={handleSpecies}
-      />
+        <input
+          className="form-control ml-2 mt-3 text-left"
+          type="radio"
+          name="species"
+          value="All"
+          onChange={handleSpecies}
+        />
+      </div>
     </form >
   )
 }
