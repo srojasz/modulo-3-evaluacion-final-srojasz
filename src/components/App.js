@@ -81,7 +81,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.characters, this.state.specieSelected)
+
     return (
       <div className="m-2">
         < Header
