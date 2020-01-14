@@ -112,6 +112,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/'>
               < Filters
+                specieSelected={this.state.specieSelected}
                 search={this.state.search}
                 handleSearch={this.handleSearch}
                 handleSpecies={this.handleSpecies}

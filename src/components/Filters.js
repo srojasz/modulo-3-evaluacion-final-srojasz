@@ -11,14 +11,19 @@ const Filters = (props) => {
   function handleSpecies(ev) {
     const specieSelected = ev.target.value;
     props.handleSpecies(specieSelected);
+  }
 
+  function handleSubmit(ev) {
+    ev.preventDefault();
   }
 
   return (
     <form
       action=""
       method=""
-      className="form-inline mb-5 d-flex justify-content-center align-items-end">
+      className="form-inline mb-5 d-flex justify-content-center align-items-end"
+      onSubmit={handleSubmit}
+    >
       <label
         className="mb-2" htmlFor="search">
         ¿Qué personaje estás buscando?
@@ -44,6 +49,7 @@ const Filters = (props) => {
           name="species"
           type="radio"
           value="Human"
+          checked={props.specieSelected === "Human"}
           onChange={handleSpecies}
         />
         <label
@@ -56,6 +62,7 @@ const Filters = (props) => {
           className="form-control input-radio ml-2 mr-2 mt-3 text-left"
           type="radio"
           id="alien"
+          checked={props.specieSelected === "Alien"}
           name="species"
           value="Alien"
           onChange={handleSpecies}
@@ -71,6 +78,7 @@ const Filters = (props) => {
           id="all"
           type="radio"
           name="species"
+          checked={props.specieSelected === "All"}
           value="All"
           onChange={handleSpecies}
         />
