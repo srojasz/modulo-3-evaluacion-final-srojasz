@@ -31,7 +31,7 @@ const Filters = (props) => {
         value={props.search}
         onChange={handleSearch}
       />
-      <div className="d-flex mt-2">
+      <div className="d-flex align-items-end mt-2">
         <label
           className="mb-2"
           name="species"
@@ -39,7 +39,8 @@ const Filters = (props) => {
           Humano
       </label>
         <input
-          className="form-control ml-2 mt-3 mr-3 text-left"
+          className="form-control input-radio ml-2 mt-3 mr-3 text-left"
+          id="human"
           name="species"
           type="radio"
           value="Human"
@@ -52,8 +53,9 @@ const Filters = (props) => {
           Alien
       </label>
         <input
-          className="form-control ml-2 mr-2 mt-3 text-left"
+          className="form-control input-radio ml-2 mr-2 mt-3 text-left"
           type="radio"
+          id="alien"
           name="species"
           value="Alien"
           onChange={handleSpecies}
@@ -65,7 +67,8 @@ const Filters = (props) => {
           Todos
       </label>
         <input
-          className="form-control ml-2 mt-3 text-left"
+          className="input-radio form-control ml-2 mt-3 text-left"
+          id="all"
           type="radio"
           name="species"
           value="All"
