@@ -5,6 +5,7 @@ import Header from './Header';
 import Filters from './Filters';
 import CharactersList from './CharactersList';
 import CharacterDetail from './CharacterDetail';
+import Loader from './Loader';
 
 
 
@@ -58,7 +59,20 @@ class App extends React.Component {
 
   // fetch
   componentDidMount() {
-    fetchCharacters().then(characters => this.setState({ characters }));
+    fetchCharacters().then(characters => {
+      if (characters === undefined) {
+        this.setState({
+          isLoading: true
+        })
+      } else {
+
+        this.setState({
+          isLoading: false,
+          characters
+        })
+
+      }
+    })
   }
 
   // render(
@@ -83,27 +97,35 @@ class App extends React.Component {
 
   render() {
 
-    return (
-      <div className="m-2">
-        < Header
-        />
+    const isLoading = this.state.isLoading;
 
-        <Switch>
-          <Route exact path='/'>
-            < Filters
-              search={this.state.search}
-              handleSearch={this.handleSearch}
-              handleSpecies={this.handleSpecies}
-            />
-            < CharactersList
-              characters={this.filterSearch()} />
-          </Route>
-          <Route
-            path='/character/:id'
-            render={this.renderCharacterDetail} />
-        </Switch>
-      </div>
-    );
+    return isLoading
+      ? (
+        <div className="ml-5 mt-5">
+          < Loader />
+        </div>)
+      : (
+        <div className="m-2">
+          < Header
+          />
+
+          <Switch>
+            <Route exact path='/'>
+              < Filters
+                search={this.state.search}
+                handleSearch={this.handleSearch}
+                handleSpecies={this.handleSpecies}
+              />
+              < CharactersList
+                characters={this.filterSearch()} />
+            </Route>
+            <Route
+              path='/character/:id'
+              render={this.renderCharacterDetail} />
+          </Switch>
+        </div>
+
+      );
   }
 }
 
