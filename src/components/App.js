@@ -5,7 +5,7 @@ import Header from './Header';
 import Filters from './Filters';
 import CharactersList from './CharactersList';
 import CharacterDetail from './CharacterDetail';
-import { findAllByAltText } from '@testing-library/react';
+
 
 
 class App extends React.Component {
@@ -14,7 +14,7 @@ class App extends React.Component {
 
     this.state = {
       search: "",
-      specieSelected: "all",
+      specieSelected: "All",
       characters: []
     }
 
@@ -44,10 +44,16 @@ class App extends React.Component {
   filterSearch() {
     const characters = this.state.characters;
     const inputText = this.state.search;
+    const specieSelected = this.state.specieSelected;
 
-    return characters.filter(character => character.name.toLowerCase().includes(inputText.toLowerCase()))
+    return (
 
+      characters
+        .filter(character => (character.species === specieSelected) || ("All" === specieSelected))
+        .filter(character => character.name.toLowerCase().includes(inputText.toLowerCase()))
+    )
   }
+
 
   // fetch
   componentDidMount() {
@@ -75,7 +81,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.specieSelected)
+    console.log(this.state.characters, this.state.specieSelected)
     return (
       <div className="m-2">
         < Header
