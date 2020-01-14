@@ -5,6 +5,12 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  background-image: url("../images/background.jpg");
+  background-repeat: repeat-y;
+}
+
 .col-center {
   float: none;
   margin: 0 auto;
@@ -25,8 +31,4 @@
 
 .input-radio {
   width: 16px;
-}
-
-.b-image {
-  background-image: url("../images/background.jpg");
 }
