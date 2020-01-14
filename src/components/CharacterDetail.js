@@ -6,7 +6,7 @@ const CharacterDetail = (props) => {
 
   const { image, name, species, episode, location, status } = props.character;
 
-  const speciesClass = () => {
+  const statusClass = () => {
 
     if (status === "Alive") {
 
@@ -33,14 +33,12 @@ const CharacterDetail = (props) => {
         <h5 className="card-title" >{name}</h5>
 
         <p>Estado:
-        <i className={`text-danger fa ${speciesClass()}`}></i>
+        <i className={`text-danger fa ${statusClass()}`}></i>
         </p>
-        <p>
-          {species === "Human"
-            ? <p>Especie: <i className="fas fa-user "></i></p>
-            : <p>Especie: 👽 </p>
-          }
-        </p>
+        {species === "Human"
+          ? <p className="text-white">Humano <i className="fas fa-user"></i></p>
+          : <p className="text-white">Alien <span role="img" aria-label="Alien"> 👽</span> </p>
+        }
         <p className="line-height">{`Planeta: ${location.name}`}</p>
         <p>{`Capítulos: ${episode.length}`}</p>
       </aside>

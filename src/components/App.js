@@ -5,6 +5,7 @@ import Header from './Header';
 import Filters from './Filters';
 import CharactersList from './CharactersList';
 import CharacterDetail from './CharacterDetail';
+import { findAllByAltText } from '@testing-library/react';
 
 
 class App extends React.Component {
@@ -13,10 +14,12 @@ class App extends React.Component {
 
     this.state = {
       search: "",
+      specieSelected: "all",
       characters: []
     }
 
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleSpecies = this.handleSpecies.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
   }
 
@@ -28,6 +31,13 @@ class App extends React.Component {
     })
   }
 
+  handleSpecies(specieSelected) {
+    this.setState({
+      specieSelected
+
+    })
+
+  }
 
   // helpers
 
@@ -65,7 +75,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.characters)
+    console.log(this.state.specieSelected)
     return (
       <div className="m-2">
         < Header
@@ -76,6 +86,7 @@ class App extends React.Component {
             < Filters
               search={this.state.search}
               handleSearch={this.handleSearch}
+              handleSpecies={this.handleSpecies}
             />
             < CharactersList
               characters={this.filterSearch()} />

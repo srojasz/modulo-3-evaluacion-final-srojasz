@@ -16,12 +16,11 @@ const CharacterCard = (props) => {
         src={img}
         alt={`Imagen del personaje ${name}`} />
       <h5 className="card-title text-white font-weight-bold" >{name}</h5>
-      <p className="text-white">
-        {specie === "Human"
-          ? <p>Humano <i className="fas fa-user"></i></p>
-          : <p>Alien 👽 </p>
-        }
-      </p>
+      {specie === "Human"
+        ? <p className="text-white">Humano <i className="fas fa-user"></i></p>
+        : <p className="text-white">Alien <span role="img" aria-label="Alien"> 👽</span> </p>
+      }
+
 
 
 
