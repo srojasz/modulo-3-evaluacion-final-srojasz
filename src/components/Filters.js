@@ -21,7 +21,7 @@ const Filters = (props) => {
     <form
       action=""
       method=""
-      className="form-inline mb-5 d-flex justify-content-center align-items-end"
+      className="form-inline mb-5 flex-column d-flex justify-content-center align-items-center text-white"
       onSubmit={handleSubmit}
     >
       <label
@@ -29,14 +29,14 @@ const Filters = (props) => {
         ¿Qué personaje estás buscando?
       </label>
       <input
-        className="form-control ml-2 mt-3 text-left"
+        className="form-control ml-2 mt-4 pt-3 text-left"
         type="text"
         name="search"
         placeholder="Ej.Summer Smith"
         value={props.search}
         onChange={handleSearch}
       />
-      <div className="d-flex align-items-end mt-2">
+      <div className="d-flex align-items-center mt-5 text-dark bg-light rounded-pill px-3">
         <label
           className="mb-2"
           name="species"
