@@ -8,9 +8,9 @@ function CharactersList(props) {
   if (props.characters.length === 0) {
     return (
       <section className="d-flex flex-column justify-content-center align-items-center">
-      <h4 className="text-center mb-1">¡Oh, no! No hemos encontrado resultados
+      <h4 className="text-center mb-1 text-white">¡Oh, no! No hemos encontrado resultados
       </h4>
-      <h5 className="mb-5">¿Por qué no lo intentas otra vez?</h5>
+      <h5 className="mb-5 text-white">¿Por qué no lo intentas otra vez?</h5>
       <img className="img-fluid w-75 mb-5"
       src={noresults} alt="Imagen de los protagonistas de Rick and Morty asustados" />
       
