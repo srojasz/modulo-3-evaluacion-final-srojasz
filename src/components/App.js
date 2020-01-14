@@ -29,9 +29,6 @@ class App extends React.Component {
   }
 
 
-
-
-
   // helpers
 
   filterSearch() {
@@ -70,7 +67,7 @@ class App extends React.Component {
   render() {
     console.log(this.state.characters)
     return (
-      <div className="background m-2">
+      <div className="m-2">
         < Header
         />
 

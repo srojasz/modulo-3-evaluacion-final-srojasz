@@ -21,9 +21,8 @@ const CharacterDetail = (props) => {
 
   }
   return (
+
     <div className="d-flex justify-content-center rounded bg-info align-items-center text-white col-12">
-
-
 
       <img
         className="img-fluid ard-img-top w-25 m-3 col-4 col-md-5 col-lg-3"
