@@ -21,33 +21,34 @@ const CharacterDetail = (props) => {
 
   }
   return (
-    <div className="d-flex justify-content-center align-items-center text-white">
-      <div className="d-flex w-75 flex-wrap border-primary pb-3 justify-content-center align-items-center text-center bg-info m-4 ">
-        <img
-          className="img-fluid ard-img-top w-25 m-3"
-          src={image}
-          alt={`Imagen del personaje ${name}`} />
+    <div className="d-flex justify-content-center rounded bg-info align-items-center text-white col-12">
 
-        <aside className="card-body d-flex flex-column ustify-content-end text-left info">
-          <h5 className="card-title" >{name}</h5>
 
-          <p>Estado:
+
+      <img
+        className="img-fluid ard-img-top w-25 m-3 col-4 col-md-5 col-lg-3"
+        src={image}
+        alt={`Imagen del personaje ${name}`} />
+
+      <aside className="card-body d-flex flex-column ustify-content-end text-left info">
+        <h5 className="card-title" >{name}</h5>
+
+        <p>Estado:
         <i className={`text-danger fa ${speciesClass()}`}></i>
-          </p>
-          <p>
-            {species === "Human"
-              ? <p>Especie: <i className="fas fa-user "></i></p>
-              : <p>Especie: 👽 </p>
-            }
-          </p>
-          <p>{`Planeta: ${location.name}`}</p>
-          <p>{`Capítulos: ${episode.length}`}</p>
-        </aside>
-        <Link className="align-self-start justify-content-start m-1 p-3 badge badge-info" to="/"><i class="fas fa-arrow-circle-left"></i>
-
-        </Link>
-      </div>
+        </p>
+        <p>
+          {species === "Human"
+            ? <p>Especie: <i className="fas fa-user "></i></p>
+            : <p>Especie: 👽 </p>
+          }
+        </p>
+        <p className="line-height">{`Planeta: ${location.name}`}</p>
+        <p>{`Capítulos: ${episode.length}`}</p>
+      </aside>
+      <Link title="Vuelve al listado" className="rounded align-self-start justify-content-start m-1 p-3 badge badge-info" to="/"><i className="fas fa-arrow-circle-left"></i>
+      </Link>
     </div>
+
   )
 }
 

@@ -37,11 +37,9 @@ class App extends React.Component {
   filterSearch() {
     const characters = this.state.characters;
     const inputText = this.state.search;
-    if (!inputText) {
-      return characters
-    } else {
-      return characters.filter(character => character.name.toLowerCase().includes(inputText.toLowerCase()))
-    }
+
+    return characters.filter(character => character.name.toLowerCase().includes(inputText.toLowerCase()))
+
   }
 
   // fetch
@@ -72,7 +70,7 @@ class App extends React.Component {
   render() {
     console.log(this.state.characters)
     return (
-      <div>
+      <div className="background m-2">
         < Header
         />
 

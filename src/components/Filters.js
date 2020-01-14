@@ -11,9 +11,12 @@ const Filters = (props) => {
   }
 
   return (
-    <form className="form-inline mb-5 d-flex justify-content-center">
+    <form
+      action=""
+      method=""
+      className="form-inline mb-5 d-flex justify-content-center align-items-end">
       <label
-        className="" htmlFor="search">
+        className="mb-2" htmlFor="search">
         ¿Qué personaje estás buscando?
       </label>
       <input
