@@ -17,9 +17,10 @@ const Filters = (props) => {
         ¿Qué personaje estás buscando?
       </label>
       <input
-        className="form-control ml-2 text-left"
+        className="form-control ml-2 mt-3 text-left"
         type="text"
         placeholder="Ej.Summer Smith"
+        value={props.search}
         onChange={handleSearch}
       />
     </form >

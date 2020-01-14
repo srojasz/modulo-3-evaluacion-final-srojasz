@@ -57,9 +57,9 @@ class App extends React.Component {
 
     const selectedCharacter = this.state.characters.find(character => character.id === routeId)
     if (selectedCharacter === undefined) {
-      return <p>
+      return <h4 className="text-center mb-1">
         Personaje no encontrado
-        </p>
+        </h4>
     } else {
 
       return (
@@ -75,11 +75,13 @@ class App extends React.Component {
       <div>
         < Header
         />
-        < Filters
-          handleSearch={this.handleSearch}
-        />
+
         <Switch>
           <Route exact path='/'>
+            < Filters
+              search={this.state.search}
+              handleSearch={this.handleSearch}
+            />
             < CharactersList
               characters={this.filterSearch()} />
           </Route>
